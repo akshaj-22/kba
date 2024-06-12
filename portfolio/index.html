@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-300 dark:bg-gray-900 dark:text-black">
+    <nav class="bg-stone-100 align-center justify-between">
+        <!-- <div class=""><img src="../Portfolio/images/icons8-tailwind-css-48.png" class="justify-start" alt=""></div>
+        <div> -->
+        <ul class="flex gap-10 p-5 justify-end font-medium">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+    </div>
+    </nav>
+    <section class="text-center bg-green-500 py-60" id="home">
+        
+        <p class="text-xl mt-4 font-medium">Hi I'm</p>
+        <h1 class="text-4xl font-bold text-white capitalize hover:uppercase">Akshaj Babu T S</h1>
+        <div class="mt-10 drop-shadow-md hover:drop-shadow-xl  "> 
+            <a href="#about" class="p-3 rounded-full bg-stone-100 hover:bg-yellow-300">ABOUT US</a>
+        </div>
+    </section>
+    
+    <section class="py-56 bg-purple-700" id="about">
+        <div class="grid grid-cols-1 md:grid-cols-1  gap-10 p-4">
+            <div class="bg-purple-400 p-10 rounded-lg drop-shadow-xl shadow-lg shadow-cyan-500/50">
+                <p class="hover:text-stone-100 uppercase text-xl font-bold text-center m-3">My Name is Akshaj Babu T S</p>
+                <p class="text-gray-800 hover:text-current uppercase text-xl  text-center m-3">Im a highly motivated and detail oriented MCA graduate with a strong foundation in Computer science, Programming and Software development </p>
+                
+            </div>
+        </div>
+    </section>
+
+    <section class="py-56 bg-gray-700" id="skills">
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-10 p-4">
+            <div class="bg-purple-400 p-10 rounded-lg drop-shadow-xl shadow-lg shadow-cyan-500/50 flex items-center justify-center">
+                <img class="w-56 h-40" src="./img/icons8-html-48.png" alt="">
+            </div>
+            <div class="bg-purple-400 p-10 rounded-lg drop-shadow-xl shadow-lg shadow-cyan-500/50">
+                <img class="w-56 h-40" src="./img/icons8-css-48.png" alt="">
+            </div>
+            <div class="bg-purple-400 p-10 rounded-lg drop-shadow-xl shadow-lg shadow-cyan-500/50">
+                <img class="w-56 h-40" src="./img/icons8-javascript-48.png" alt="">
+            </div>
+            <div class="bg-purple-400 p-10 rounded-lg drop-shadow-xl shadow-lg shadow-cyan-500/50">
+                <img class="w-56 h-40" src="./img/icons8-python-48.png" alt="">
+            </div>
+            <div class="bg-purple-400 p-10 rounded-lg drop-shadow-xl shadow-lg shadow-cyan-500/50">
+                <img class="w-56 h-40" src="./img/icons8-tailwind-css-48.png" alt="">
+            </div>
+        </div>
+    </section>
+    
+    <section class="py-56" id="projects">
+        <div class="grid grid-cols-1 md:grid-cols-2  gap-10 p-4">
+            <div class="bg-stone-100 p-20 rounded-lg drop-shadow-xl shadow-lg shadow-cyan-500/50">
+                <h2 class="hover:text-emerald-600 uppercase text-xl font-bold text-center m-3">Product Recommendation System</h2>
+            </div>
+            <div class="bg-stone-100 p-20 rounded-lg drop-shadow-xl shadow-lg shadow-cyan-500/50">
+                <h2 class="hover:text-emerald-600 uppercase text-xl font-bold text-center m-3">Online Rental System</h2>
+            </div>
+        </div>
+    </section>
+    <section class="py-56 bg-yellow-300" id="education">
+        <div class="grid grid-cols-1 md:grid-cols-1  gap-10 p-4">
+            <div class="bg-orange-500 p-10 rounded-lg drop-shadow-xl shadow-lg shadow-cyan-500/50">
+                <h2 class="hover:text-stone-100 uppercase text-xl font-bold text-center m-3">M C A (Cochin University of Science and Technology)&nbsp;&nbsp;-&nbsp;&nbsp;2023</h2>
+                <h2 class="hover:text-stone-100 uppercase text-xl font-bold text-center m-3">B sc. Computer Science (Union Christian College, Aluva)&nbsp;&nbsp;-&nbsp;&nbsp;2021</h2>
+                <h2 class="hover:text-stone-100 uppercase text-xl font-bold text-center m-3">Higher Secondary (G H S S North Paravur)&nbsp;&nbsp;-&nbsp;&nbsp;2018</h2>
+                <h2 class="hover:text-stone-100 uppercase text-xl font-bold text-center m-3">High School (The Alwaye Settlement, Aluva)&nbsp;&nbsp;-&nbsp;&nbsp;2016</h2>
+            </div>
+        </div>
+    </section>
+    <section class="py-56 bg-green-500" id="contact">
+        <div class="text-center bg-lime-400 p-5  mx-auto max-w-lg rounded-lg">
+            <h2 class="text-4xl font-bold text-white capitalize hover:uppercase">Contact Us</h2>
+           <form action="">
+                <input class="my-9 rounded-lg h-10 w-80" type="text" name="" id="" placeholder="username"><br>
+                <input class="mb-9 rounded-lg h-10 w-80"  type="password" name="" id="" placeholder="password"><br>
+                <textarea class="ml-12 mb-9 rounded-lg h-20 w-80" name="" id="" placeholder="Type Your Message..."></textarea>
+                <input class="p-2 rounded-lg bg-lime-600 hover:bg-yellow-300" type="submit" value="login">
+            </form>
+        </div>
+    </section>
+    <!-- <div class="flex justify-center py-32 w-80">
+        <iframe src="https://www.youtube.com/embed/MSGYyKL2700" frameborder="0"></iframe>
+    </div> -->
+    <footer>
+        <div class="bg-slate-800 pl-10">
+            <p class="text-stone-100 p-2">&copy;This Page All Right Reserved</p>
+        </div>
+    </footer>
+</body>
+</html>
