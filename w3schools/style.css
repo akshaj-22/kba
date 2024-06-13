@@ -1,0 +1,333 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+nav{
+    width: 100%;
+    height: 80px;
+}
+.first-nav{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+.logo{
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.list{
+    display: flex;
+    align-items: center;
+    gap:3px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.list:hover{
+    background-color: #04AA6D;
+}
+.search{
+    display: flex;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 15px;
+    border: 1px solid black;
+}
+.input{
+    border: none;
+    width: 110px;
+    outline: none;
+}
+.brightness{
+    display: flex;
+    align-items: center;
+    width: 170px;
+    height: 30px;
+}
+.bright1{
+   margin-left: 25px; 
+}
+.spaces{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-right: 20px;
+}
+.bt-main{
+    width: 170px;
+    height: 40px;
+    display: flex;
+    background-color: #E0E6E8 ;
+    margin-left: 20px;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 20px;
+}
+.bt-small{
+    background-color: #04AA6D;
+    
+    height: 100%;
+    width: 90px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.second-nav{
+    display: flex;
+    background-color: #282A35;
+    height: 30px;
+    width: 100%;
+}
+.small-nav{
+    padding-right: 16px;
+    padding-left: 16px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #282A35;
+}
+.small-nav:hover{
+    background-color: black;
+}
+.main-body{
+    background-image:url(./images/lynx_in_space.png), url(./images/background_in_space.gif);
+        background-repeat: no-repeat,repeat;
+        background-position: 90% 60%, center center;
+        padding-top: 90px;
+        padding-bottom: 50px;
+        height: 500px;
+}
+.cnt{
+    text-align: center;
+}
+.btn{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin-left: auto;
+    margin-right: auto; */
+
+}
+
+/* html */
+.cutbod{
+    background-color: #D9EEE1;
+    display: flex;
+    text-align: center;
+    height: 600px;
+    padding-top: 50px;
+    padding-bottom: 150px;
+}
+.cutbod2{
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+}
+.cutbod3{
+    text-align: center;
+}
+.cuthead{
+    font-size: 80px;
+    font-weight: 700;
+    margin-top: 18px;
+}
+.cutline{
+    font-size: 19px;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.cutgreen{
+    background-color: #04aa6d;
+    color: white;
+    font-size: 18px;
+    border-radius: 25px;
+    width: 220px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+.cutyellow{
+    background-color: #fff080 ;
+    color: black;
+    font-size: 18px;
+    border-radius: 25px;
+    width: 220px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.cutblack{
+    background-color: #000;
+    color: white;
+    font-size: 18px;
+    border-radius: 25px;
+    width: 220px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.cutred{
+    background-color: #ffb3bb;
+    color: black;
+    font-size: 18px;
+    border-radius: 25px;
+    width: 220px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.cutcode{
+    background-color: rgb(221, 221, 221);
+    margin-left: 70px;
+    width: 450px;
+    height: 450px;
+    margin-top: 30px;
+    text-align: left;
+    border-radius: 10px;
+}
+.cutcode2{
+    background-color: white;
+    width: 400px;
+    height: 300px;
+    margin-left:auto;
+    margin-right: auto;
+    text-align: left;
+    padding-left: 2px;
+    padding-top: 10px;
+    border-left: 10px solid #04aa6d ;
+}
+h3{
+    font-size: 20px;
+    font-weight: 500;
+    margin-left: 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+}
+.try{
+    background-color: #04aa6d;
+    color: white;
+    font-size: 18px;
+    border-radius: 25px;
+    width: 220px;
+    height: 35px;
+    margin-top: 20px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 15px;
+    margin-left: 20px;
+}
+/* css */
+.cutbod-css{
+    background-color: #fff080;
+    display: flex;
+    text-align: center;
+    height: 600px;
+    padding-top: 50px;
+    padding-bottom: 150px;
+}
+/* js */
+.cutbod-js{
+    background-color: #282A35;
+    display: flex;
+    text-align: center;
+    height: 600px;
+    padding-top: 50px;
+    padding-bottom: 150px; 
+}
+/* python */
+.cutbod-python{
+    background-color: #ffffff;
+    display: flex;
+    text-align: center;
+    height: 600px;
+    padding-top: 50px;
+    padding-bottom: 150px; 
+}
+/* sql */
+.cutbod-sql{
+    background-color: #85C1E9;
+    display: flex;
+    text-align: center;
+    height: 600px;
+    padding-top: 50px;
+    padding-bottom: 150px; 
+}
+/* big-square */
+.big-square{
+    background-color: #282A35;
+    height: 1560px;
+    padding-top: 50px;
+    padding-bottom: 150px; 
+}
+.row{
+    display: flex;
+    gap: 30px;
+    height: 400px;
+    align-items: center;
+    justify-content: center;
+}
+.col1{
+    height: 300px;
+    width: 800px;
+    background-color: #ffb3bb;
+    margin-left: 50px;
+    border-radius: 13px;
+    
+}
+.col2{
+    height: 300px;
+    width: 800px;
+    background-color: #fff080;
+    margin-right: 50px;
+    border-radius: 13px;
+    
+}
+
+.innerbox{
+    background-color: #04aa6d;
+    color: white;
+    font-size: 18px;
+    border-radius: 25px;
+    width: 220px;
+    height: 35px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.small-square{
+    background-color: #282A35;
+    height: 1400px;
+    padding-bottom: 100px;
+}
