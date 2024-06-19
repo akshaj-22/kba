@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>My name is <span id="val1"></span> I am coming from <span id="val2"></span></h1>
+    <h1>My age is <span id="age"></span></h1>
+    <h1>My fathers age is <span id="fage"></span>. He is <span id="older"></span> older to me.</h1>
+    <h1>Price of 1 Mango= <span id="mango"></span> Price of 10 mangoes= <span id="10mango"></span></h1>
+    <script>
+       let a=3;
+       let b=4;
+       let c=1;
+       let d=5;
+       let e=2;
+       let f=10;
+       let g=17;
+       let h=6;
+       let i=3.5;
+       let j=2.4;
+       let k=140.5
+       let l=4.5;
+    
+       document.write(a+b-c+"<br>");
+       document.write((a*d)+c+"<br>");
+       document.write((d*e)/e+"<br>");
+       document.write(f*e+a-c+"<br>");
+       document.write(f%e+"<br>");
+       document.write(g%e+"<br>");
+       document.write((d*h)%b+"<br>");
+       document.write(i+j+"<br>");
+       document.write(k/d+"<br>");
+       document.write(l*e+"<br>");
+       document.write("<hr>");
+       {
+        let x=5;
+        let y=6;
+        document.write((x+=y)+"<br>");
+        document.write((x*=y));
+       }
+       document.write("<hr>");
+       {
+        x=20;
+        y=30;
+        document.write(x==y);
+        document.write("<br>");
+        document.write(x===y);
+        document.write("<br>");
+        document.write(x>y);
+        document.write("<br>");
+        document.write(x<y);
+        document.write("<br>");
+        document.write(x>=y);
+        document.write("<br>");
+        document.write(x<=y);
+        document.write("<br>");
+        document.write(x!=y);
+       }
+       document.write("<hr>");
+       {
+        x=10; 
+        y=5;
+        document.write(x==y);
+        document.write("<br>");
+        document.write(x===y);
+        document.write("<br>");
+        document.write(x>y);
+        document.write("<br>");
+        document.write(x<y);
+        document.write("<br>");
+        document.write(x>=y);
+        document.write("<br>");
+        document.write(x<=y);
+        document.write("<br>");
+        document.write(x!=y);
+       }
+       document.write("<hr>");
+       {
+        x=10;
+        y=10;
+        document.write(x==y);
+        document.write("<br>");
+        document.write(x===y);
+        document.write("<br>");
+        document.write(x>y);
+        document.write("<br>");
+        document.write(x<y);
+        document.write("<br>");
+        document.write(x>=y);
+        document.write("<br>");
+        document.write(x<=y);
+        document.write("<br>");
+        document.write(x!=y);
+       }
+       document.write("<hr>");
+       {
+        x="shreya"; 
+        y=10;
+        document.write(x==y);
+        document.write("<br>");
+        document.write(x===y);
+        document.write("<br>");
+        document.write(x>y);
+        document.write("<br>");
+        document.write(x<y);
+        document.write("<br>");
+        document.write(x>=y);
+        document.write("<br>");
+        document.write(x<=y);
+        document.write("<br>");
+        document.write(x!=y);
+       }
+       document.write("<hr>");
+       document.getElementById("val1").innerHTML="Akshaj";
+       document.getElementById("val2").innerHTML="Ernakulam";
+       document.getElementById("age").innerHTML="23";
+       document.getElementById("fage").innerHTML="50";
+       document.getElementById("older").innerHTML="27 years"
+       document.getElementById("mango").innerHTML="12"
+       document.getElementById("10mango").innerHTML="120"
+       document.write("<hr>");
+       {
+        num1=2345678123456789012345123456789;
+        num2=1234567890123456789012345678899;
+        val=num1+num2;
+        document.write(val+"<br>");
+
+        number1=BigInt(2345678123456789012345123456789);
+        number2=BigInt(1234567890123456789012345678899);
+        value=number1+number2;
+        document.write(value+"<br>")
+       }
+       document.write("<hr>");
+       {
+        numb1=2345678123456789012345123456789;
+        numb2=1234567890123456789012345678899;
+        ans2=numb1+numb2;
+        document.write(ans2+"<br>"); 
+       } 
+       document.write("<hr>");
+       {
+        num1=2345678123456789012345123456789;
+        num2=BigInt(1234567890123456789012345678899);
+        ans=num1+num2;
+        document.write(ans+"<br>"); 
+       }
+    </script>
+</body>
+</html>
