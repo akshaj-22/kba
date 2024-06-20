@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript-3</title>
+</head>
+<body>
+    <div id="list">
+
+    </div>
+
+    <select name="" id="cake">
+        <option id="o1">Black Forest</option>
+        <option id="o2">White Forest</option>
+        <option id="o3">Red Velvet</option>
+        <option id="o4">Chocolate</option>
+        <option id="o5">Vanilla</option>
+    </select>
+    <h1>My name is <span id="name"></span>. I live in <span id="place"></span>.</h1>
+    <script>
+        //q1
+        let a=document.createElement("p").textContent="hello world";
+        document.write(a);
+        document.write("<hr>");
+
+        //q2
+        let x=document.createElement("ul");
+        x.id="ullist";
+        document.getElementById("list").appendChild(x);
+
+        let li1=document.createElement("li");
+        li1.innerHTML="Rockstar";
+        document.getElementById("ullist").appendChild(li1);
+
+        let li2=document.createElement("li");
+        li2.innerHTML="Wake up Sid";
+        document.getElementById("ullist").appendChild(li2);
+
+        let li3=document.createElement("li");
+        li3.innerHTML="Rab ne Bana de Jodi";
+        document.getElementById("ullist").appendChild(li3);
+
+        document.write("<br>");
+
+        //q3
+        let y=document.createElement("select");
+        y.id="sl";
+        document.getElementById("list").appendChild(y);
+
+        let op1=document.createElement("option");
+        op1.innerHTML="hai";
+        document.getElementById("sl").appendChild(op1);
+
+        let op2=document.createElement("option");
+        op2.innerHTML="hello";
+        document.getElementById("sl").appendChild(op2);
+
+        let op3=document.createElement("option");
+        op3.innerHTML="how are you";
+        document.getElementById("sl").appendChild(op3);
+
+        document.write("<hr>");
+
+        //q6
+
+        let cake2=document.getElementById("o2").value;
+        document.write(cake2);
+
+        document.write("<hr>");
+
+        //q7
+
+        let fname="Akshaj";
+        let lname=" Babu T S";
+        let fullname=fname+lname;
+        document.write(fullname.toUpperCase());
+
+        document.write("<hr>");
+
+        //q8
+
+        string="You can study anything if you have a will to do it";
+        str1=string.substring(0,13);
+        str2=string.substring(0,3);
+        str3=string.substring(37,41);
+        str4=string.substring(45,50);
+        newstr=str1+"&nbsp;"+str2+"&nbsp;"+str3+"&nbsp;"+str4;
+        document.write(newstr);
+
+        document.write("<hr>");
+
+        //q10
+
+        text="MongoDB is a decentralised distributed ledger. MongoDB can eliminate centralisation.";
+        text1=text.replaceAll("MongoDB","Blockchain");
+        document.write(text1);
+
+        document.write("<hr>");
+
+        //q11
+
+        txt=text.substring(0,45);
+        document.write(txt);
+
+        document.write("<hr>");
+
+        //q12
+
+        a1="Hello World";
+        a2="hEllO World";
+        a3=(a1==a2);
+        document.write(a3+"<br>");
+        document.write(typeof(a3));
+
+        document.write("<hr>");
+
+        //q13
+
+        let name1="Akshaj";
+        let name2=" Babu T S";
+        let name=name1+name2;
+        let place="Ernakulam";
+
+        document.getElementById("name").innerHTML=name.toUpperCase();
+        document.getElementById("place").innerHTML=place.toUpperCase();
+
+        //q14
+
+        s1="I like to play video games.";
+        s2="I don’t like Hide & seek";
+
+        sen1=s1.replace("like","don't like");
+        sen2=s2.replace("like","don't like");
+        document.write(sen1+"<br>");
+        document.write(sen2+"<br>");
+
+        document.write("<hr>");
+ 
+        //q15
+
+        file="app.js";
+        file1=file.slice(0,3);
+        document.write(file1+"<br>");
+
+        document.write("<hr>");
+
+        //q16
+
+        num1=10;
+        num2=5;
+
+        document.write("num1 is:",num1+"<br>");
+        document.write("num2 is:",num2+"<br>");
+        temp=num1;
+        num1=num2;
+        num2=temp;
+        document.write("swaped num1 is:",num1+"<br>");
+        document.write("swaped num2 is:",num2+"<br>");
+
+        document.write("<hr>");
+
+        //q17
+
+        n1=10;
+        n2=5;
+
+        document.write("num1 is:",n1+"<br>");
+        document.write("num2 is:",n2+"<br>");
+        n1=n1+n2;
+        n2=n1-n2;
+        n1=n1-n2;
+        document.write("swaped num1 is:",n1+"<br>");
+        document.write("swaped num2 is:",n2+"<br>");
+
+        document.write("<hr>");
+
+        //q18
+
+        let celcius=25;
+        let fahrenheit=(celcius*9/5)+32;
+        document.write(`${celcius} celcius is equal to ${fahrenheit} fahrenheit`);
+
+        document.write("<hr>");
+
+        //q19
+
+        let number=5;
+        sq= number*number;
+        document.write("square of "+number +"is "+sq);
+
+        document.write("<hr>");
+
+        //q20
+
+        let n=5;
+        cube= n*n*n;
+        document.write("cube of "+number +"is "+cube);
+
+        document.write("<hr>");
+
+        //q21
+
+        //area of square
+
+        let side=10;
+        square=side*side;
+        document.write("length of square is :"+side+"<br>");
+        document.write("area of square is :"+square+"<br>");
+
+        //area of circle
+
+        let radius=10;
+        pi=3.14;
+        circle=pi*radius*radius;
+        document.write("The radius of the circle is :"+radius+"<br>");
+        document.write("area of circle is :"+circle+"<br>");
+
+        //area of rectangle
+
+        let length=10;
+        let breadth=5;
+        rectangle=length*breadth;
+        document.write("The length and breadth of a rectangle is :"+length+"and"+breadth+"<br>");
+        document.write("area of the rectangle is :"+rectangle+"<br>");
+
+        //area of triangle
+
+        let base=8;
+        let height=6;
+        triangle=0.5*base*height;
+        document.write("The base and height of a triangle is :"+base+"and"+height+"<br>");
+        document.write("area of the triangle is :"+triangle+"<br>");
+
+        document.write("<hr>");
+
+        //q22
+
+        //perimeter of rectangle
+
+        l=10;
+        b=2;
+        perRec=2*(l*b);
+        document.write("The length and breadth of a rectangle is :"+l+"and"+b+"<br>");
+        document.write("perimeter of the rectangle is :"+perRec+"<br>");
+
+        //perimeter of square
+
+        length=5;
+        perSqr=4*length;
+        document.write("length of the square is :"+length+"<br>");
+        document.write("perimeter of the square is :"+perRec+"<br>");
+
+        //perimeter of circle
+
+        radius=5;
+        perCirc=2*3.14*radius;
+        document.write("radius of the circle is :"+radius+"<br>");
+        document.write("perimeter of the circle is :"+perCirc+"<br>");
+
+        //perimeter of triangle
+
+        side1=5;
+        side2=3;
+        side3=2;
+        perTri=side1+side2+side3;
+        document.write("sides of the triangle are :"+side1,side2,side3+"<br>");
+        document.write("perimeter of the triangle is :"+perTri+"<br>");
+
+        document.write("<hr>");
+
+        //q23
+
+        principal=1000;
+        rate=5;
+        time=3;
+        n=1;
+        let sim=(principal * rate * time) / 100;
+        let amount = principal * (1 + (rate / (n * 100))) ** (n * time)
+        let com=amount - principal;
+        document.write("principal,rate of intrest,time, and the number corresponding to your choice are",principal+","+rate+","+time+","+n+"<br>");
+        document.write("simple intrest = ",sim+"<br>");
+        document.write("compound intrest = ",com+"<br>");
+    </script>
+</body>
+</html>
