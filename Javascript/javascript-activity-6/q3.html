@@ -1,0 +1,26 @@
+<!-- Program to read an array contain 20,25,30,35,40,45,50,55 and divide the array into two arrays containing half the elements -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        st=[20,25,30,35,40,45,50,55]
+        st1=[];
+        st2=[];
+        for(i=0;i<st.length/2;i++)
+        {
+            st1.push(st[i]);
+        }
+        for(j=st.length/2;j<st.length;j++)
+        {
+            st2.push(st[j]);
+        }
+        document.write(st1+"<br>");
+        document.write(st2+"<br>");
+    </script>
+</body>
+</html>

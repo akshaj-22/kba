@@ -1,0 +1,63 @@
+<!-- Enter a list of films you like
+From the list print your most favourite film 
+Add one more film to the list
+Pop one element from list
+Delete the least interseted film from list
+Make a different array from 3rd position to 6th position
+Find the position of film acted by your favourite actor
+Search whether “Avesham” is on your list -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        films=["avesham","Rockstar","Brahmayugam","Premalu","Manjummal boys"];
+        document.write(films+"<br>");
+        document.write("<hr>");
+        document.write(films[1]+"<br>");
+        films.push("Turbo");
+        document.write(films+"<br>");
+        document.write("<hr>");
+        films.pop();
+        document.write(films+"<br>");
+        document.write("<hr>");
+        delete films[2];
+        document.write(films+"<br>");
+        document.write("<hr>");
+        for(i=2;i<films.length-1;i++)
+        {
+            films[i]=films[i+1];
+        }
+        films.pop();
+        document.write(films+"<br>");
+        document.write("<hr>");
+        ar=[];
+        films.push("Happy Days");
+        films.push("Varathan");
+        films.push("oppam");
+        for(i=2;i<6;i++)
+        {
+            ar.push(films[i]);
+        }
+        document.write(films+"<br>");
+        document.write(ar+"<br>");
+        document.write("<hr>");
+        for(x of films)
+        {
+            if(x=="avesham")
+            {
+                document.write("film detected");
+            }
+            else{
+                document.write("film not detected");
+            }
+        }
+       
+    </script>
+</body>
+</html>

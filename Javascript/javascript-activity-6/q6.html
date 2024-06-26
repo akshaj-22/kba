@@ -1,0 +1,35 @@
+<!-- Program to read array=[8,2,6,7,3,1] . Sort the array in ascending & descending order -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        arr=[8,2,6,7,3,1];
+        let temp=0;
+        n=arr.length;
+        for(i=0;i<n-1;i++)
+        {
+            for(j=0;j<n-i-1;j++)
+            {
+                if(arr[j]>arr[j+1])
+                {
+                    temp=arr[j];
+                    arr[j]=arr[j+1];
+                    arr[j+1]=temp;
+                }
+            }
+        }
+        document.write("The asscending order of sorted array :",arr+"<br>");
+        let nwarr=[];
+        for(k=n-1;k>=0;k--)
+        {
+            nwarr.push(arr[k]);
+        }
+        document.write("The descending order of sorted array :",nwarr);
+    </script>
+</body>
+</html>

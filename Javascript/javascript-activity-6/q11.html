@@ -1,0 +1,48 @@
+<!-- Find union and intersection of these sorted arrays a=[4,5,6,7,8] b=[2,3,4,5,6] -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        a=[4,5,6,7,8];
+        b=[2,3,4,5,6];
+        int=[];
+        uni=[];
+        for(i=0;i<a.length;i++)
+        {
+            for(j=0;j<b.length;j++)
+            {
+                if(a[i]==b[j])
+                {
+                    int.push(a[i]);
+                }
+                
+            }
+        }document.write("Intersection :"+int+"<br>");
+
+
+        for(i=0;i<a.length;i++)
+        {
+            if(!uni.includes(a[i]))
+            {
+                uni.push(a[i]);
+            }
+
+        }
+        for(i=0;i<a.length;i++)
+        {
+            if(!uni.includes(b[i]))
+            {
+                uni.push(b[i]);
+            }
+            
+        }document.write("union :",uni);
+        
+        
+    </script>
+</body>
+</html>
