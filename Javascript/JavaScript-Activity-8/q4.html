@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise-4</title>
+</head>
+<body>
+    <h1>Exercise-4</h1>
+    <script>
+        //Create separate callback functions for addition, subtraction, multiplication, and division.
+        function calculate(a,b,operation)
+        {
+            return operation(a,b);
+        }
+        function add(a,b)
+        {
+            console.log("Sum :"+(a+b));
+        }
+        function sub(a,b)
+        {
+            console.log("Diff :"+(a-b));
+        }
+        function div(a,b)
+        {
+            console.log("Result :"+(a/b));
+        }
+        function mul(a,b)
+        {
+            console.log("Product :"+(a*b));
+        }
+        function square(a,b)
+        {
+            console.log("Square :",(a*b));
+        }
+
+        //Use calculate to perform each of these operations with two numbers and log the results.
+
+        calculate(10,2,add);
+        calculate(10,2,sub);
+        calculate(10,2,div);
+        calculate(10,2,mul);
+
+        //Additionally, use bind to create a new function for calculating the square of a number using the calculate function and log the result.
+
+        let result=calculate.bind(null,6,6,square);
+        result();
+    </script>
+</body>
+</html>

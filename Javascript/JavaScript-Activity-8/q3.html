@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise-3</title>
+</head>
+<body>
+    <h1>Exercise-3</h1>
+    <script>
+        //Use call to invoke introduce with an object having a name property.
+        function introduce()
+        {
+            console.log("Hello, my name is "+this.name);
+        }
+        let person ={
+            name:"Akshaj",
+            age:23,
+            qualification:"MCA"
+        };
+        introduce.call(person);
+
+        //Use apply to invoke introduce with another object.
+        function introduce1(a,b)
+        {
+            console.log(a+" My name is ,"+this.name+b)
+        }
+        introduce1.apply(person,["Hi","!"])
+
+        //Use bind to create a new function with a different object and call it.
+
+        function introduce2(val)
+        {
+            console.log("My fav car is "+this.car+val);
+        }
+        let cars = {
+            car:"BMW"
+        };
+        let main= introduce2.bind(cars,"!!!");
+        main();
+    </script>
+</body>
+</html>
