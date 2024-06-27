@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Task Manager</title>
+    <style>
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Simple Task Manager</h1>
+    <label for="task">Enter a task:</label>
+    <input type="text" name="" id="task"><br>
+    <button onclick="addTask()">Add Task</button>
+    <ul id="taskList"></ul>
+
+    <script>
+        function addTask() {
+            const taskInput = document.getElementById("task");
+            const taskList = document.getElementById("taskList");
+
+            if (taskInput.value.trim() !== "") {
+                const li = document.createElement('li');
+                const li2 = document.createElement('li');
+                li.textContent = taskInput.value;
+
+                //remove button
+                const removeButton = document.createElement('Button');
+                removeButton.textContent = 'Remove';
+                removeButton.onclick = function() {
+                    taskList.removeChild(li);
+                };
+                li2.appendChild(removeButton);
+                taskList.appendChild(li);
+                taskList.appendChild(li2);
+
+                //edit button
+                const editButton = document.createElement('Button');
+                editButton.textContent = 'Edit';
+                editButton.onclick = function () {
+                    taskList.removeChild(li);
+                        taskList.removeChild(li2);
+                        taskInput.value=li.textContent;    
+                }
+                li2.appendChild(editButton);    
+
+                //complete button
+                const cButton = document.createElement('Button');
+                cButton.textContent = 'Complete';
+                cButton.onclick = function () {
+                    li.style.textDecoration="line-through";   
+                }
+                li2.appendChild(cButton);
+                taskInput = '';
+            }
+        }
+    </script>
+</body>
+
+</html>
