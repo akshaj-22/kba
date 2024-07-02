@@ -1,0 +1,22 @@
+.food {
+    color: green;
+  }
+  .transport {
+    color: blue;
+  }
+  .entertainment {
+    color: purple;
+  }
+  .completed {
+    color: grey;
+    text-decoration: line-through;
+  }
+  ul {
+    list-style-type: none;
+  }
+  li {
+    margin: 5px;
+  }
+  button{
+    margin-left: 10px;
+  }

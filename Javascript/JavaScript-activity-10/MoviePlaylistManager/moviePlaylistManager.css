@@ -1,0 +1,28 @@
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            margin: 5px 0;
+        }
+
+        .watched {
+            text-decoration: line-through;
+            color: gray;
+        }
+
+        .priority-high {
+            color: red;
+        }
+
+        .priority-medium {
+            color: yellow;
+        }
+
+        .priority-low {
+            color: green;
+        }
+
+        button {
+            margin-left: 5px;
+        }
