@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p id="favCandy"></p>
+    <p id="addCandy"></p>
+    <p id="showArray"></p>
+
+    
+    <p id="popCandy"></p>
+    <p id="showPopArray"></p>
+
+
+    <p id="deleteCandy"></p>
+    <p id="showDeleteArray"></p>
+
+    <p id="shiftCandy"></p>
+    <p id="showRemoveShift"></p>
+
+    <p id="sliceArray"></p>
+
+    <p id="searchArray"></p>
+
+    <p id="sortArray"></p>
+
+    <p id="reverseArray"></p>
+    
+
+    <script>
+        let candies = [
+            "Diary Milk", "Kit Kat", "Milky Bar", 
+            "Five-Star", "Snickers", "Munch",
+        ];
+      
+        function mostFav() {
+            const favCandy = candies[0];
+            document.getElementById('favCandy').textContent = `favourite candy: ${favCandy}`;
+        }
+
+        function addCandy() {
+            const newCandy = "Perk";
+            candies.push(newCandy);
+            document.getElementById('showArray').textContent = `add to Array: ${candies}`;
+        }
+
+        function popCandy() {
+            candies.pop();
+            document.getElementById('showPopArray').textContent = `pop from Array: ${candies}`;
+        }
+
+        function deleteCandy() {
+            candies.splice(2, 1);
+            
+            document.getElementById('showDeleteArray').textContent = `3rd candy deleted from Array, new array: ${candies}`;
+        }
+
+        function removeShift() {
+            const favCandy = candies.shift();
+            document.getElementById('showRemoveShift').textContent = `First candy removed, New Array : ${candies}`;
+        }
+
+        function sliceArray() {
+            const slicedArray = candies.slice(2, 6); 
+            document.getElementById('sliceArray').textContent = `Sliced array: ${slicedArray}`;
+        }
+
+        function searchArray() {
+            const found = candies.includes("galaxy");
+            if (found) {
+                document.getElementById('searchArray').textContent = `found`;
+            } else {
+                document.getElementById('searchArray').textContent =` not found`;
+            }
+        }
+
+        function sortArray() {
+            candies.sort(); 
+            document.getElementById('sortArray').textContent = `Sorted array: ${candies}`;
+    
+        }
+        
+        function reverseArray() {
+            candies.reverse(); 
+            document.getElementById('reverseArray').textContent = `Reversed array: ${candies}`;
+        
+        }
+
+        mostFav();
+        addCandy();
+        popCandy();
+        deleteCandy();
+        removeShift();
+        sliceArray();
+        searchArray();
+        sortArray();
+        reverseArray();
+        
+    </script>
+</body>
+</html>
