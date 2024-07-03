@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="input">Enter a string</label>
+    <input type="text" id="input">
+    <br>
+    <button onclick="rev()">reverse</button><br>
+    <p id="output"></p>
+    <script>
+        function rev(){
+            let str = document.getElementById("input").value;
+            str=str.split("").reverse().join("");
+            document.getElementById("output").innerHTML=str;
+        }
+    </script>
+</body>
+</html>

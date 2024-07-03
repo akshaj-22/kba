@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="input">Enter a string</label>
+    <input type="text" id="input">
+    <br><br>
+    <button onclick="low()">Convert to lower Case</button><br><br>
+    <p id="output"></p>
+    <script>
+        function low() {
+            let str = document.getElementById("input").value;
+            let low = str.toLowerCase();
+            document.getElementById("output").innerHTML = low;
+        }
+    </script>
+</body>
+
+</html>

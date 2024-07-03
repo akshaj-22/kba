@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="input">Enter a number</label>
+        <input type="text" id="input">
+        <br><br>
+        <button onclick="fact()">Factorial</button><br><br>
+        <p id="output"></p><br>
+        <script>
+            function fact() {
+                let input = document.getElementById("input").value;
+                let factorial = 1;
+                let i;
+                for (i = 1; i <= input; i++) {
+                    factorial = factorial * i;
+                }
+                document.getElementById("output").innerHTML =`factorial of ${input} is ${factorial}`;
+            }
+        </script>
+</body>
+
+</html>
