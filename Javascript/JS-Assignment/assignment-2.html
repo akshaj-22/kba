@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="name">Name</label>
+    <input type="text" name="" id="nameInput"><br>
+    <label for="address">Address</label>
+    <textarea name="" id="addInput"></textarea><br>
+    Degree:
+    <input type="radio" name="degree" id="btech" value="btech">
+    <label>Btech</label>
+    <input type="radio" name="degree" id="mtech" value="mtech">
+    <label>Mtech</label>
+    <input type="radio" name="degree" id="MCA" value="MCA">
+    <label>MCA</label>
+    <input type="radio" name="degree" id="Others" value="Others" onclick="addDrop()">
+    <label>Others</label>
+    <div id="list"></div>
+
+    <script>
+        function addDrop()
+        {
+            const drop = document.createElement('select');
+            drop.id='d1'
+            document.getElementById('list').appendChild(drop);
+            const op1 = document.createElement('option');
+            op1.textContent='BCA';
+
+            const op2 = document.createElement('option');
+            op2.textContent='PGDCA';
+
+            const op3 = document.createElement('option');
+            op3.textContent='Bcom';
+
+            const op4 = document.createElement('option');
+            op4.textContent='Mphil';
+
+            document.getElementById('d1').append(op1,op2,op3,op4);
+
+        }
+    </script>
+</body>
+</html>

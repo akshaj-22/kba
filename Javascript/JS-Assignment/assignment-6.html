@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">Enter elment</label>
+    <input type="text" name="" id="element"><br>
+    <button id="display" onclick="add()">click</button>
+    <div id="out"></div>
+
+    <script>
+        let array=[];
+        let i=0;
+        function add(){
+        let element=document.getElementById('element').value.trim();
+        if(element!=='')
+        {
+            array.push(element);
+            document.getElementById('out').innerHTML='The Entered Array is: '+array;
+        }
+    }
+    </script>
+</body>
+</html>

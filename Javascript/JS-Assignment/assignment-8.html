@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <label for="name">Name of subject</label>
+    <input type="text" id="name" /><br /><br />
+    <label for="mark">Mark</label>
+    <input type="text" id="mark" /><br /><br />
+    <button onclick="showgrade()">Submit</button>
+    <p id="grade"></p>
+
+    <script>
+      function showgrade() {
+        const name = document.getElementById("name").value;
+        const mark = document.getElementById("mark").value;
+
+        if (mark >= 90 && mark<=100) {
+          document.getElementById("grade").innerHTML = "A+";
+        } else if (mark >= 80 && mark<90) {
+          document.getElementById("grade").innerHTML = "A";
+        } else if (mark >= 70 && mark<80) {
+          document.getElementById("grade").innerHTML = "B+";
+        } else if (mark >= 60 && mark<70) {
+          document.getElementById("grade").innerHTML = "C+";
+        } else if (mark >= 50 && mark<60) {
+          document.getElementById("grade").innerHTML = "C";
+        } else {
+          document.getElementById("grade").innerHTML = "error";
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="name">First Number</label>
+    <input type="text" name="" id="num1"><br>
+    <label for="address">Second Number</label>
+    <input type="text" name="" id="num2"><br>
+    <button id="btn" onclick="cmp()">compare</button>
+    <div id="output"></div>
+
+    <script>
+        
+        
+        function cmp(){
+            const num1=document.getElementById('num1').value;
+            const num2=document.getElementById('num2').value;
+
+            if(num1>num2)
+            {
+               document.getElementById('output').textContent='First Number is Greater than Second Number'; 
+            }
+            else if(num2>num1)
+            {
+                document.getElementById('output').textContent='Second Number is Greater than First Number';
+            }
+            else if(num2==num1){
+                document.getElementById('output').textContent= 'First Number and Second number are equal';
+            }
+        }
+    </script>
+</body>
+</html>

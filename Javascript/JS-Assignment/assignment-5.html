@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="name">Enter the side of square :</label>
+    <input type="text" name="" id="side"><br>
+    <button id="aos" onclick="square()">Area of Square</button>
+    <div id="output1"></div>
+
+
+    <label for="name">Enter the length :</label>
+    <input type="text" name="" id="length"><br>
+    <label for="name">Enter the breadth :</label>
+    <input type="text" name="" id="breadth"><br>
+    <button id="aor" onclick="rectangle()">Area of Rectangle</button>
+    <div id="output2"></div>
+
+    <label for="name">Enter the Radius :</label>
+    <input type="text" name="" id="radius"><br>
+    <button id="aoc" onclick="circle()">Area of Circle</button>
+    <div id="output3"></div>
+
+    <script>
+        //area of square
+
+        function square() {
+            let side = document.getElementById('side').value;
+            if (side !== '') {
+                let squareArea = side * side;
+                document.getElementById('output1').innerHTML = squareArea;
+            }
+        }
+
+
+        //area of rectangle
+        function rectangle() {
+            let length = document.getElementById('length').value;
+            let breadth = document.getElementById('breadth').value;
+
+            if (length !== '' && breadth !== '') {
+                let rectangleArea = length * breadth;
+                document.getElementById('output2').innerHTML = rectangleArea;
+            }
+        }
+
+
+        //area of circle
+        function circle() {
+            let radius = document.getElementById('radius').value;
+
+            if (radius !== '') {
+                let circleArea = 3.14*radius*radius;
+                document.getElementById('output3').innerHTML = circleArea;
+            }
+        }
+    </script>
+</body>
+
+</html>

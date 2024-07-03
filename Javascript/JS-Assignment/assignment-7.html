@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="">Enter elment</label>
+    <input type="text" name="" id="element"><br>
+    <button id="display" onclick="add()">click</button>
+    <div id="out1"></div>
+    <label for="">Index</label>
+    <select name="" id="sel" onclick="selclick()"></select>
+    <div id="out2"></div>
+    <label for="">The Array in Sorted Order is :</label>
+    <div id="out3"></div>
+    <label for="">Search :</label>
+    <input type="text" name="" id="searchText">
+    <button id="searchElement" onclick="search()">search</button>
+    <div id="out4"></div>
+    <div id="out5"></div>
+
+    <script>
+        let array = [];
+        let temp = [];
+        let index = [];
+        let i = 0;
+        function add() {
+            let element = Number(document.getElementById('element').value.trim());
+            if (element !== '') {
+                array.push(element);
+                index.push(i + 1);
+                document.getElementById('out1').innerHTML = 'The Entered Array is: ' + array;
+                i += 1;
+
+
+                let op = document.createElement('option');
+                op.textContent = index[i - 1];
+                document.getElementById('sel').appendChild(op);
+
+                //sort
+                for (let k = 0; k < array.length; k++) {
+                    temp[k] = array[k];
+                }
+
+
+                //bubblesort
+                for (var l = 0; l < temp.length; l++) {
+                    for (var j = 0; j < temp.length - l - 1; j++) {
+                        if (temp[j] > temp[j + 1]) {
+                            var tempValue = temp[j];
+                            temp[j] = temp[j + 1];
+                            temp[j + 1] = tempValue;
+                        }
+                    }
+                }
+                document.getElementById('out3').innerHTML = temp;
+                //reversed array
+                let arr3 = [...array];
+                let arr4 = [];
+                let d;
+
+                for (let d = arr3.length - 1; d >= 0; d--) {
+                    arr4.push(arr3[d]);
+                }
+                document.getElementById("out5").innerHTML ='Reversed array is : '+arr4;
+
+
+            }
+        }
+
+
+
+        function search() {
+            const searchText = document.getElementById('searchText').value;
+            const searchValue = Number(searchText);
+
+            if (isNaN(searchValue)) {
+                document.getElementById('out4').innerHTML = 'Please enter a valid number';
+                return;
+            }
+
+            const found = array.includes(searchValue);
+
+            if (found) {
+                document.getElementById('out4').innerHTML = `The Element ${searchValue} is found!!!`;
+            } else {
+                document.getElementById('out4').innerHTML = `The Element ${searchValue} is not found!!!`;
+            }
+        }
+
+        function selclick() {
+            let selectedIndex = document.getElementById('sel').selectedIndex;
+            document.getElementById('out2').innerHTML = 'The Element is :' + array[selectedIndex];
+        }
+    </script>
+</body>
+
+</html>

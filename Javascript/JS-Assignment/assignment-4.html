@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="name">Name</label>
+    <input type="text" name="" id="name"><br>
+    <button id="btn" onclick="addElement()">submit</button><br>
+    <select name="" id="drop"></select>
+    <button id="dropbtn" onclick="select()">click</button>
+    <div id="output"></div>
+
+    <script>
+       let names=[];
+        let values=[];
+        let i=1;
+        function addElement(){
+            const name=document.getElementById('name').value.trim();
+            
+            if(name!=='' && isNaN(name))
+            {
+                names.push(name);
+                values.push(i);
+                const op=document.createElement('option');
+                op.textContent=values[i-1];
+                document.getElementById('drop').appendChild(op);
+                
+                i=i+1;
+            }
+        }
+
+        function select(){
+            let selIndex=document.getElementById('drop').selectedIndex;
+            document.getElementById('output').innerHTML=names[selIndex];
+        }
+    </script>
+</body>
+</html>
