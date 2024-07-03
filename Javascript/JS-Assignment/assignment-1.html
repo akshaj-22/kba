@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Calculator</title>
+	<style>
+		.btn {
+			width: 50px;
+			height: 50px;
+			color: white;
+			background-color: #828282;
+			font-size: 30px;
+		}
+
+		.table1 {
+			background-color: #272626;
+			border-radius: 10px;
+		}
+	</style>
+</head>
+
+<body>
+	<br><br>
+	<center>
+		<table border="0.5px" cellspacing="10px" cellpadding="0" class="table1">
+			<tr>
+				<td colspan="4" align="right" style="background-color:#d0e6a8; height:60px; border-radius: 5px;">
+					<font size="9px"> <span class="display" id="display">0</span> </font>
+				</td>
+			</tr>
+			<tr>
+				<td><input type="button" value="7" class="btn" onclick="appendToDisplay('7')"></td>
+				<td><input type="button" value="8" class="btn" onclick="appendToDisplay('8')"></td>
+				<td><input type="button" value="9" class="btn" onclick="appendToDisplay('9')"></td>
+				<td><input type="button" style="background-color: aquamarine; color: black;" value="&divide;" class="btn" onclick="appendToDisplay('/')"></td>
+			</tr>
+			<tr>
+				<td><input type="button" value="4" class="btn" onclick="appendToDisplay('4')"></td>
+				<td><input type="button" value="5" class="btn" onclick="appendToDisplay('5')"></td>
+				<td><input type="button" value="6" class="btn" onclick="appendToDisplay('6')"></td>
+				<td><input type="button" style="background-color: aquamarine; color: black;" value="x" class="btn" onclick="appendToDisplay('*')"></td>
+			</tr>
+			<tr>
+				<td><input type="button" value="1" class="btn" onclick="appendToDisplay('1')"></td>
+				<td><input type="button" value="2" class="btn" onclick="appendToDisplay('2')"></td>
+				<td><input type="button" value="3" class="btn" onclick="appendToDisplay('3')"></td>
+				<td><input type="button" style="background-color: aquamarine; color: black;" value="-" class="btn" onclick="appendToDisplay('-')"></td>
+			</tr>
+			<tr>
+				<td><input type="button" value="0" class="btn" onclick="appendToDisplay('0')"></td>
+				<td><input type="button" style="background-color: aquamarine; color: black;" onclick="appendToDisplay('.')" value="&#183;" class="btn"></td>
+				<td><input type="button" style="background-color: aquamarine; color: black;" value="=" class="btn" onclick="calculateResult()"></td>
+				<td><input type="button" style="background-color: aquamarine; color: black;" value="+" class="btn" onclick="appendToDisplay('+')"></td>
+			</tr>
+			<tr>
+				<td colspan="4"><input type="button" value="AC" class="btn" onclick="clearDisplay()" style="width: 230px; background-color: rgb(255, 35, 35);"></td>
+			</tr>
+		</table>
+
+	</center>
+
+	<script>
+		let currentDisplay = "0";
+
+		function appendToDisplay(value) {
+			if (currentDisplay === "0") {
+				currentDisplay = value;
+			} else {
+				currentDisplay += value;
+			}
+			updateDisplay();
+		}
+
+		function updateDisplay() {
+			const displayElement = document.getElementById("display");
+			displayElement.textContent = currentDisplay;
+		}
+
+		function calculateResult() {
+			try {
+				const result = eval(currentDisplay);
+				currentDisplay = result.toString();
+				updateDisplay();
+			} catch (error) {
+				currentDisplay = "Error";
+				updateDisplay();
+			}
+		}
+
+		function clearDisplay() {
+			currentDisplay = "0";
+			updateDisplay();
+		}
+	</script>
+</body>
+
+</html>
