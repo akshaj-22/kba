@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="element">Enter Element</label>
+    <input type="text" id="element"><br><br>
+    <button id="inpute" onclick="adde()">Enter</button>
+    <button id="max" onclick="max()">Maximum</button><br><br>
+    <p>Largest element is <span id="maxout"></span> </p><br><br>
+    
+
+    <script>
+        let ele = [];
+        let arr = [];
+
+        function adde() {
+            let a = Number(document.getElementById("element").value.trim());
+            ele.push(a);
+            arr = [...ele];
+            for (let c = arr.length - 1; c >= 0; c--) {
+                for (let j = 0; j <= c - 1; j++) {
+                    if (arr[j] > arr[j + 1]) {
+                        let temp = arr[j + 1];
+                        arr[j + 1] = arr[j];
+                        arr[j] = temp;
+                    }
+                }
+            }
+        }
+
+        function max(){
+            let x=arr.length-1
+            document.getElementById("maxout").innerHTML =arr[x];
+        }
+
+        
+    </script>
+</body>
+
+</html>

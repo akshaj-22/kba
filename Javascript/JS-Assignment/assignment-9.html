@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <label for="name">Enter name :</label>
+    <input type="text" name="name" id="name">
+<br><br>
+<label for="mark">Enter mark :</label>
+<input type="text" name="mark" id="mark">
+<br><br>
+<button onclick="display()">Submit</button>
+<br><br>
+<p id="nameresult"></p>
+<p id="markresult"></p>
+<p id="avgmarkresult"></p>
+
+<br>
+<label for="search">Search by name :</label>
+<input type="text" name="search" id="search">
+<button onclick="search()">Search</button>
+<p id="searchresult"></p>
+
+<script>
+    let names=[];
+    let marks=[];
+    function display(){
+        let name=document.getElementById("name").value;
+        let mark=document.getElementById("mark").value;
+
+        names.push(name);
+        marks.push(Number(mark));
+
+        document.getElementById("nameresult").innerHTML="Names: " + names;
+        document.getElementById("markresult").innerHTML="Marks: " + marks;
+
+        let sum = 0;
+        for(let i = 0; i < marks.length; i++){
+            sum += marks[i];
+        }
+        let avgMark = sum / marks.length;
+        document.getElementById("avgmarkresult").innerHTML="Average Mark: " + avgMark.toFixed(2);
+        
+        
+        document.getElementById("name").value = "";
+        document.getElementById("mark").value = "";
+
+        
+    }
+
+
+</script>
+</body>
+</html>

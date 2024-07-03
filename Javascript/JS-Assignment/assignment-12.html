@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="name">Enter Fruit Name :</label>
+    <input type="text" id="name" /><br /><br />
+    <button onclick="sbtn()">Submit</button><br /><br />
+    <label>index: </label>
+    <select id="output1" onclick="showName()"></select>
+    <div id="output2"></div>
+    <script>
+        let i = 1,
+            name = [],
+            ind = [];
+
+        function sbtn() {
+            let nameinput = document.getElementById("name").value;
+            name.push(nameinput);
+            ind.push(i);
+            let select = document.getElementById("output1");
+            let option = document.createElement("option");
+            option.textContent = i;
+            select.appendChild(option);
+            document.getElementById("name").value = "";
+            i++;
+        }
+        function showName() {
+            let selectedIndex = document.getElementById("output1").selectedIndex;
+            document.getElementById("output2").innerHTML = name[selectedIndex];
+        }
+    </script>
+</body>
+
+</html>

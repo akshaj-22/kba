@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="num">Enter a Number</label>
+    <input type="text" name="" id="num" />
+    <button onclick="reverse()">Reverse</button>
+    <script>
+        let result;
+        function reverse() {
+            let number = Number(document.getElementById("num").value);
+
+            if (!isNaN(number)) {
+                number = number.toString().split("").reverse().join("");
+                if (result && result.parentNode) {
+                    result.parentNode.removeChild(result);
+                }
+                result = document.createElement("div");
+                result.textContent = `Reverse : ${number}`;
+                document.body.appendChild(result);
+            } else {
+                alert("error");
+            }
+            document.getElementById("num").value = "";
+        }
+    </script>
+</body>
+
+</html>

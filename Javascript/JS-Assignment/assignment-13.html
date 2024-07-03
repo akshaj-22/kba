@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="list"></select>
+    <p id="out"></p>
+    <script>
+        let list = document.getElementById("list");
+
+        let op1 = document.createElement("option");
+        op1.text = "dare 1";
+        op1.value = "sing a song";
+        list.appendChild(op1);
+
+        let op2 = document.createElement("option");
+        op2.text = "dare 2";
+        op2.value = "perfom dance";
+        list.appendChild(op2);
+
+        let op3 = document.createElement("option");
+        op3.text = "dare 3";
+        op3.value = "act a senario";
+        list.appendChild(op3);
+
+        list.onclick = function() {
+            let selectedOption = list.options[list.selectedIndex];
+            document.getElementById("out").textContent = selectedOption.value;
+        }
+    </script>
+</body>
+</html>
