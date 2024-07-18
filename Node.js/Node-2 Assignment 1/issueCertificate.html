@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Home </title>
+	<style>
+		body {
+			background-color: #F2F2F2;
+
+		}
+
+		.btn-home {
+			height: 35px;
+			width: 65px;
+		}
+
+
+		.btn-issue {
+			height: 35px;
+			width: 120px;
+			background-color: #228FFB;
+			border: none;
+			color: white;
+			border-radius: 5px;
+		}
+
+		.content {
+
+			width: 1050px;
+			height: 500px;
+			margin-top: 10px;
+			margin-left: auto;
+			margin-right: auto;
+			background-color: #F5F9F8;
+			padding-left: 80px;
+			padding-top: 50px;
+		}
+
+		.btn-issue-submit {
+			height: 35px;
+			width: 120px;
+			background-color: #02D0F7;
+			border: none;
+			border-radius: 5px;
+		}
+
+		.form-heading {
+			font-size: 25px;
+			font-family: Arial, Helvetica, sans-serif;
+			font-weight: lighter;
+		}
+
+		.text-box {
+			height: 20px;
+			width: 522px;
+		}
+
+		select {
+			height: 30px;
+			width: 530px;
+		}
+
+		.date-input {
+			height: 30px;
+			width: 527px;
+		}
+
+		label {
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 15px;
+		}
+
+		h3 {
+			font-size: 25px;
+			font-family: Arial, Helvetica, sans-serif;
+			margin-top: 0;
+		}
+	</style>
+</head>
+
+<body>
+	<nav style="float: right;">
+		<a href="index.html"><input type="button" value="Home" class="btn-home"></a>
+		<a href="issueCertificate.html"><input type="button" value="Issue Certificate" class="btn-issue"></a>
+	</nav>
+
+
+	<h3>Certificate Dapp</h3>
+	<br>
+
+
+
+	<div class="content">
+		<div class="content-1">
+
+
+			<h3 class="form-heading">Issue New Certificate </h3>
+
+			<form>
+				<label>Select Course *</label><br>
+				<select name="course">
+					<option value="Certified Blockchain Associate">Certified Blockchain Associate</option>
+					<option value="Developer Essential for Blockchain" selected>Developer Essential for Blockchain
+					</option>
+					<option value="Blockchain Foundation Programe">Blockchain Foundation Programe</option>
+				</select><br><br>
+				<label>Certificate ID *</label><br>
+				<input type="text" name="name" required class="text-box"><br><br>
+				<label>Candidate name *</label><br>
+				<input type="text" name="cname" required class="text-box"><br><br>
+
+				<label>Select Grade *</label><br>
+				<select name="grade" required>
+					<option value="S">S</option>
+					<option value="A" selected>A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+				</select><br><br>
+				<label>Issue Date *</label><br>
+				<input type="date" name="issuedate" required class="date-input"><br><br>
+				<input type="submit" value="Issue Certificate" class="btn-issue-submit">
+
+
+			</form>
+
+		</div>
+	</div>
+
+	<script>
+		function storeCertificateData() {
+		  const course = document.querySelector('select[name="course"]').value;
+		  const certId = document.querySelector('input[name="name"]').value;
+		  const candidateName = document.querySelector('input[name="cname"]').value;
+		  const grade = document.querySelector('select[name="grade"]').value;
+		  const issueDate = document.querySelector('input[name="issuedate"]').value;
+	  
+		  if (localStorage.getItem(certId)) {
+			alert(`Certificate with ID ${certId} already exists!`);
+			return;
+		  }
+	  
+		  const certificate = {
+			course,
+			certId,
+			candidateName,
+			grade,
+			issueDate
+		  };
+	  
+		  localStorage.setItem(certId, JSON.stringify(certificate));
+		  alert('Certificate issued successfully!');
+		}
+	  
+		document.querySelector('form').addEventListener('submit', function (event) {
+		  event.preventDefault();
+		  storeCertificateData();
+		  this.reset();
+		});
+	  </script>
+
+
+</body>
+
+</html>

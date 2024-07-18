@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Home</title>
+	<style>
+		body {
+			background-color: #F2F2F2;
+			font-family: Arial, Helvetica, sans-serif;
+		}
+
+		.content {
+
+			text-align: center;
+			margin-left: auto;
+			margin-right: auto;
+			padding-left: 0px;
+			padding-top: 50px;
+			padding-bottom: 0px;
+			width: 1200px;
+			height: 530px;
+			border-radius: 5px;
+			background-color: #F5F9F8;
+			margin-top: 40px;
+		}
+
+		h3 {
+			font-size: 25px;
+		}
+
+		p {
+			font-size: 19px;
+		}
+	</style>
+</head>
+
+<body>
+
+
+	<div class="content">
+		<h3>Kerala Blockchain Academy</h3>
+		<img src="./images/dApp.jpg" width="20%">
+		<br><br>
+		<p id="output-para">This id to certify that <span id="name-out"> </span> <br>has sucessfully completed <br><span
+				id="course-out"> <br></span> <br>with grade <span id="grade-out"> </span> on <span id="date-out">
+			</span> </p>
+
+	</div>
+
+	<script>
+		function getCertificateDetails(certId) {
+			const certificate = localStorage.getItem(certId);
+			return certificate ? JSON.parse(certificate) : null;
+		}
+
+		function displayCertificateDetails() {
+			const urlParams = new URLSearchParams(window.location.search);
+			const certId = urlParams.get('certId');
+			const certificate = getCertificateDetails(certId);
+
+			if (certificate) {
+
+				document.getElementById("name-out").innerHTML = `${certificate.candidateName}`;
+				document.getElementById("course-out").innerHTML = `${certificate.course}`;
+				document.getElementById("grade-out").innerHTML = `${certificate.grade}`;
+				document.getElementById("date-out").innerHTML = `${certificate.issueDate}`;
+
+			} else {
+				document.getElementById("output-para").innerHTML = `Certificate not found!`;
+
+			}
+		}
+
+		document.addEventListener('DOMContentLoaded', displayCertificateDetails);
+	</script>
+
+</body>
+
+</html>

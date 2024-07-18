@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Home</title>
+	<style>
+		body {
+			background-color: #F2F2F2;
+			font-family: Arial, Helvetica, sans-serif;
+		}
+
+
+		nav {
+			float: right;
+		}
+
+		.content {
+			text-align: center;
+		}
+
+		img {
+			width: 276px;
+			margin-bottom: 20px;
+		}
+
+		.btn-home {
+			height: 35px;
+			width: 65px;
+			background-color: #228FFB;
+			border: none;
+			border-radius: 5px;
+			color: white;
+		}
+
+		.btn-search {
+			height: 35px;
+			width: 80px;
+			background-color: #13ACCC;
+			border: none;
+			border-radius: 1px;
+			color: white;
+		}
+
+		.btn-issue {
+			height: 35px;
+			width: 120px;
+		}
+
+		.textfield {
+			width: 180px;
+			height: 20px;
+			border-style: solid;
+			border-color: #228FFB;
+		}
+	</style>
+</head>
+
+<body>
+
+
+	<nav>
+		<a href="index.html"><input type="button" value="Home" class="btn-home"></a>
+		<a href="issueCertificate.html"><input type="button" value="Issue Certificate" class="btn-issue"></a>
+	</nav>
+	<br>
+	<div class="content">
+
+		<h1>Certificate Dapp</h1>
+
+
+		<div class="image">
+			<img src="./images/dApp.jpg">
+		</div>
+
+
+
+		<div class="input">
+			<form onsubmit="searchCertificate(event)">
+				<input type="text" id="certId" required name="text" placeholder="Enter Certificate ID to View"
+					class="textfield">
+				<a href="viewCertificate.html"><input type="submit" value="Search" class="btn-search"></a>
+			</form>
+		</div>
+
+	</div>
+
+	<script>
+
+		function searchCertificate(event) {
+			event.preventDefault();
+			const certId = document.getElementById('certId').value;
+			window.location.href = `viewCertificate.html?certId=${certId}`;
+		}
+	</script>
+
+
+</body>
+
+</html>
