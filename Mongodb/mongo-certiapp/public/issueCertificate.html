@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>issue certificate</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#F2F2F2]">
+	<nav class="float-right mt-[10px] pr-[10px]">
+		<a href="home.html"><input type="button" value="Home" class="h-[35px] w-[65px] shadow-2xl bg-stone-300 rounded-lg p-1"></a>
+		<a href="issueCertificate.html"><input type="button" value="Issue Certificate" class="h-[35px] w-[125px] bg-[#228FFB] p-1  rounded-lg border-none  text-white"></a>
+	</nav>
+
+
+	<h3 class="text-[25px] font-bold">Certificate Dapp</h3>
+	<br>
+
+
+
+	<div class=" w-[1050px] h-[550px] mt-[10px] mx-auto bg-stone-300 rounded-lg pl-[80px] pt-[50px]">
+		<div class="">
+
+
+		<h3 class="text-[25px] font-[Arial] mb-[15px]">Issue New Certificate </h3>
+
+		<form action="/submit-form" method="post">
+			<label class="text-[15px]">Select Course *</label><br>
+			<select name="course" class="h-[25px] w-[522px] border border-[#000000]">
+				<option value="cba">Certified Blockchain Associate</option>
+				<option value="deb" selected>Developer Essential for Blockchain</option>
+				<option value="bfp">Blockchain Foundation Programe</option>
+			</select><br><br>
+			<label class="text-[15px]">Certificate ID *</label><br>
+			<input type="text" name="cid" required class="h-[25px] w-[522px] border border-[#000000]"><br><br>
+			<label class="text-[15px]">Candidate name *</label><br>
+			<input type="text" name="name" required class="h-[25px] w-[522px] border border-[#000000]"><br><br>
+
+			<label class="text-[15px]">Select Grade *</label><br>
+			<select name="grade" required class="h-[25px] w-[522px] border border-[#000000]">
+				<option value="S">S</option>
+				<option value="A" selected>A</option>
+				<option value="B">B</option>
+				<option value="C">C</option>
+			</select><br><br>
+			<label class="text-[15px]">Issue Date *</label><br>
+			<input type="date" name="date" required class="h-[25px] w-[522px] border border-[#000000]" ><br><br>
+			<input type="submit" value="Issue Certificate" class="btn-issue-submit h-[35px] w-[135px] rounded-lg bg-[#02D0F7] border-none">
+
+
+		</form>
+
+	</div>
+	</div>
+
+
+
+</body>
+
+</html>

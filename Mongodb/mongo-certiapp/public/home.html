@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <nav class=" py-[20px] flex justify-end">
+        <div class="w-[200px] h-[30px] py-[20px] px-[10px]  flex gap-[5px] items-center justify-center">
+            <div class="p-[6px] rounded-lg bg-[#228FFB]"><a class="text-slate-50" href="/">Home</a></div>
+            <div class="p-[7px] rounded-lg bg-slate-200"><a class="text-black"
+                    href="/issue">IssueCertificate</a></div>
+        </div>
+    </nav>
+    <section class="">
+        <div class="p-[50px]">
+            <h1 class="text-center mb-[20px] text-4xl font-bold text-black">Certificate Dapp</h1>
+            <img class="mx-auto w-[200px] h-[200px] mb-[20px]" src="./images/dApp.jpg" alt="">
+            <div class="flex justify-center p-[10px] items-center">
+                <form class="w-[350px] h-[50px] flex items-center gap-[10px]" action="">
+                    <input class="h-[29px] ring-2 ring-blue-500/50 focus:ring-yellow-400 outline-none" type="text"
+                        name="cid" id="cid" placeholder="Enter Certificate ID to View">
+                    <input class="bg-[#73D4F5] pt-[2px] pb-[27px] pl-[10px] pr-[10px] h-[30px] ring-2 ring-blue-500/50"
+                            type="button" value="Submit" onclick="search()">
+                </form>
+            </div>
+        </div>
+    </section>
+    <script>
+        function search(){
+            const cid = document.getElementById('cid').value;
+            const url = `/issue/${cid}`;
+            console.log(cid);
+            console.log(url);
+            window.location.href=url
+        }
+    </script>
+</body>
+
+</html>

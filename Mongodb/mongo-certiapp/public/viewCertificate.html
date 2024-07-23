@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>view certificate</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <section class="">
+        <div class="m-[70px] border border-black pt-[60px] pb-[60px] pl-[30px] pr-[30px]">
+            <h2 class="text-center text-2xl font-bold text-black mb-[20px]">Kerala Blockchain Academy</h2>
+            <img class="mx-auto w-[200px] h-[200px] mb-[5px]" src="/images/dApp.jpg" alt="">
+            <div class="p-8 mx-auto mx-w-lg w-[280px] text-center">
+                <p class="text-black">This is to certify that <br>
+                    <h1 id="Name"></h1>
+                     has successfully completed <br>
+                     <h1 id="Course"></h1>
+                      with grade<h1 id="Grade"></h1> on <span id="Date"></span>
+                </p>
+            </div>
+        </div>
+    </section>
+    <script>
+        async function fetchall(){
+            const url = window.location.href;
+            const id = window.location.pathname.split('/').pop()
+            console.log(id);
+            try{
+                const response = await fetch(`/api/issue/${id}`);
+                console.log(response)
+                if(!response.ok){
+                    throw new Error('Failed to fetch');
+                }
+                const data = await response.json();
+                console.log(data);
+                document.getElementById('Course').textContent = data.course;
+                document.getElementById('Name').textContent = data.name;
+                document.getElementById('Grade').textContent = data.grade;
+                document.getElementById('Date').textContent = data.date;
+            }
+            catch(error)
+            {
+                console.error('fetch error',error);
+                document.body.innerHTML = "Failed to fetch data";
+            }
+        }
+        document.addEventListener('DOMContentLoaded', fetchall)
+    </script>
+</body>
+</html>
