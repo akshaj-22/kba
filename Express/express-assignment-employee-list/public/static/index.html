@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Employee list</h1>
+   
+        <input type="text" name="" id="Name" placeholder="Enter the Employee Name">
+        <input type="text" name="" id="Role" placeholder="Enter the Employee Role">
+        <button id="add" onclick="addTask()">Add Employee</button>
+        <ul id="emplist"></ul>
+    
+    <script>
+        async function addTask(){
+            const nameInput = document.getElementById("Name");
+            const roleInput = document.getElementById("Role");
+            const name= nameInput.value;
+            const role= roleInput.value;
+            if(name!=="" || role!==""){
+            const response = fetch("/add/details",{
+                method:"POST",
+                headers:{
+                    "Content-Type":"application/json"
+                },
+                body:JSON.stringify({name:name,role:role})
+                
+            })
+            showEmployees()
+            
+            nameInput.value=''
+            roleInput.value=''
+            
+            }
+            
+        }
+
+
+        function display(emp) {
+            const emplist = document.getElementById("emplist");
+           // emplist.innerHTML=""
+            const li = document.createElement("li");
+            li.id = `item-${emp.id}`;
+            li.innerHTML = `
+        <span id="name-${emp.id}">${emp.name}</span> - 
+        <span id="role-${emp.id}">${emp.role}</span>
+        <button onclick="edit(${emp.id})">Edit</button>
+        <button onclick="deleteEmployee(${emp.id})">Delete</button>
+    `;
+            emplist.appendChild(li);
+        }
+
+        async function edit(id) {
+            const editName = prompt("Enter the employee new name:");
+            const editRole = prompt("Edit the employee new role:");
+            if (editName && editRole) {
+                const response = await fetch(`/edit/${id}`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name:editName, role:editRole })
+                });
+                if (response.ok) {
+                    const employee = await response.json();
+                    document.getElementById(`name-${id}`).textContent = employee.name;
+                    document.getElementById(`role-${id}`).textContent = employee.role;
+                }
+            }
+        }
+
+        async function deleteEmployee(id) {
+            //console.log(id);
+            const response = await fetch(`/delete/${id}`, { method: 'DELETE',headers: { 'Content-Type': 'application/json' } });
+            if (response.ok) {
+                document.getElementById(`item-${id}`).remove();
+            }
+        }
+
+        async function showEmployees() {
+            const response = await fetch('/view');
+            const employees = await response.json();
+            const emplist = document.getElementById("emplist");
+            emplist.innerHTML = "";
+            employees.forEach(emp => display(emp));
+        }
+
+        //document.addEventListener("DOMContentLoaded", showEmployees);
+    </script>
+</body>
+</html>
