@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Appointments</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-lg w-3/4">
+        <span >Customer ID</span><p id="customerId" class="text-gray-600 text-lg mb-4">Customer ID: </p>
+        <span > customerName</span><h1 id="customerName" class="text-4xl font-bold text-gray-800 mb-4">Customer Name</h1>
+        <span > Table Number</span><p id="tableNumber" class="text-gray-600 text-lg mb-4">Table Number</p>
+        <span > Date</span><p id="date" class="text-gray-600 text-lg mb-4">Date:</p>
+        <span > Time</span><p id="time" class="text-gray-600 text-lg mb-4">Time:</p>
+        <div class="mt-6">
+            <a href="/" class="bg-blue-500 text-white px-6 py-2 rounded-full text-lg hover:bg-blue-600">Go to Home</a>
+            <a href="/submit" class="bg-green-500 text-white px-6 py-2 rounded-full text-lg hover:bg-green-600 ml-4">Add new Appointment</a>
+        </div>
+    </div>
+    <script>
+        async function fetchAppointmentDetails() {
+            const url = window.location.href;
+            const id = window.location.pathname.split('/').pop();
+            try {
+                const response = await fetch(`/api/patient/${id}`);
+                if (!response.ok) {
+                    throw new Error('Failed to fetch appointment details');
+                }
+                const data = await response.json();
+                document.getElementById('patientId').textContent = `ID: ${data.patientId}`;
+                document.getElementById('patientName').textContent = data.patientName;
+                document.getElementById('doctorName').textContent = data.doctorName;
+                document.getElementById('date').textContent = data.date;
+                document.getElementById('time').textContent = data.time;
+                document.getElementById('updateLink').href = `/update/${data.patientId}`;
+            } catch (error) {
+                console.error('Error fetching appointment details:', error);
+                document.body.innerHTML = '<p>Failed to load appointment details.</p>';
+            }
+        }
+
+
+        document.addEventListener('DOMContentLoaded', fetchAppointmentDetails);
+    </script>
+</body>
+</html>
