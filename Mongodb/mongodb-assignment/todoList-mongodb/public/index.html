@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .line-through { text-decoration: line-through; }
+    </style>
+</head>
+<body class="bg-gradient-to-r from-green-400 to-blue-500 min-h-screen flex items-center justify-center">
+    <div class="w-full max-w-lg bg-white p-8 rounded-lg shadow-lg">
+        <h1 class="text-3xl font-bold mb-6 text-center text-gray-700">Todo List</h1>
+        <div class="flex mb-4">
+            <input type="text" id="taskInput" class="flex-1 border rounded-l-md p-3 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter a task">
+            <button onclick="addTask()" class="bg-blue-600 text-white px-4 py-3 rounded-r-md hover:bg-blue-700 transition">Add Task</button>
+        </div>
+        <ul id="taskList" class="mt-4 space-y-3">
+            <!-- Tasks will be rendered here -->
+        </ul>
+    </div>
+    <script>
+        async function addTask() {
+            const taskInput = document.getElementById("taskInput");
+            const task = taskInput.value.trim();
+            if (task) {
+                const response = await fetch('/add', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ task })
+                });
+                if (response.ok) {
+                    const todo = await response.json();
+                    renderTask(todo);
+                    taskInput.value = "";
+                }
+            }
+        }
+
+        async function getTasks() {
+            const response = await fetch('/api/todos');
+            const todos = await response.json();
+            todos.forEach(todo => renderTask(todo));
+        }
+
+        async function updateTask(id) {
+            console.log(`Updating task with ID: ${id}`);
+            const newTask = prompt("Update the task:");
+            if (newTask) {
+                const response = await fetch(`/api/todos/${id}`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ task: newTask })
+                });
+                if (response.ok) {
+                    const todo = await response.json();
+                    document.getElementById(`task-${id}`).textContent = todo.task;
+                } else {
+                    console.log('Failed to update task.');
+                }
+            }
+        }
+
+        async function deleteTask(id) {
+            console.log(`Deleting task with ID: ${id}`);
+            const response = await fetch(`/api/todos/${id}`, { method: 'DELETE' });
+            if (response.ok) {
+                document.getElementById(`item-${id}`).remove();
+            } else {
+                console.log('Failed to delete task.');
+            }
+        }
+
+        function renderTask(todo) {
+            try {
+                const taskList = document.getElementById("taskList");
+                const li = document.createElement("li");
+                li.id = `item-${todo._id}`;
+                li.classList.add("flex", "justify-between", "items-center", "bg-gray-100", "p-3", "rounded-md", "shadow-sm");
+                li.innerHTML = `
+                    <span id="task-${todo._id}" class="text-gray-800">${todo.task}</span>
+                    <div class="flex space-x-2">
+                        <button onclick="updateTask('${todo._id}')" class="bg-yellow-500 text-white px-2 py-1 rounded hover:bg-yellow-600 transition">Edit</button>
+                        <button onclick="deleteTask('${todo._id}')" class="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600 transition">Delete</button>
+                    </div>
+                `;
+                taskList.appendChild(li);
+            } catch (error) {
+                console.log('Error rendering task:', error);
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", getTasks);
+    </script>
+</body>
+</html>
+
